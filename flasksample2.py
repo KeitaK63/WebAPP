@@ -1,0 +1,10 @@
+from flask import Flask, render_template
+app = Flask(__name__)
+
+@app.route('/pow/<int:x>/<int:y>/')
+def web_pow(x,y):
+    result = pow(x,y)
+    return render_template('flasksample2.html',x=x, y=y, result=result)
+
+if __name__ == '__main__':
+    app.run()
